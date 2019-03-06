@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Recipe List</h5>
+          <p>
+            <ul>
+              {{#each recipies}}
+                <li>
+                  <p>
+                    {{this.id}}. {{this.recipeName}}
+                    <button data-recipeid="{{this.id}}" class="display">Display Full Recipe</button>
+                  </p>
+                </li>
+              {{/each}}
+            </ul>
+          </p>  
+        </div>
+      </div>
+      <div class="card mt-4">
+        <div class="card-body">
+          <h5 class="card-title">Recipe Details</h5>
+          <p>
+            {{this.recipeName}}
+          </p>
+          <p>
+          <strong>Ingredients:</strong>
+          </p>
+            <ul>
+            <li>{{this.ingredient_one}}</li>
+            <li>{{this.ingredient_two}}</li>
+            <li>{{this.ingredient_three}}</li>
+            <li>{{this.ingredient_four}}</li>
+            <li>{{this.ingredient_five}}</li>
+            <li>{{this.ingredient_six}}</li>
+            <li>{{this.ingredient_seven}}</li>
+            <li>{{this.ingredient_eight}}</li>
+            <li>{{this.ingredient_nine}}</li>
+            <li>{{this.ingredient_ten}}</li>            
+            </ul>
+          <p>
+          <strong>Steps:</strong>
+          </p>
+          <p>{{this.description}}</p>
+            <a href="/">← Back To Home</a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
