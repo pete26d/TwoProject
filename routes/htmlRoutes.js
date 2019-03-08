@@ -30,7 +30,14 @@ module.exports = function(app) {
   app.get("/recipeform", function(req, res) {
     res.sendFile(path.join(__dirname, "../public/recipeform.html"));
   });
-
+  app.get("/signup", function(req, res) {
+    // If the user already has an account send them to the members page
+   console.log ("hello");
+   if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
   // Load example page and pass in an example by id
   app.get("/example/:id", function(req, res) {
     db.Example.findOne({ where: { id: req.params.id } }).then(function(dbExample) {
