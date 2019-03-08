@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Your Food List</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./styles/styles.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery.js"></script>
+</head>
+<body>
+        <nav data-target="mobile-demo" class="sidenav-trigger">
+                <div class="nav-wrapper">
+                  <a href="#!" class="brand-logo">Logo</a>
+                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Submit recipe</a></li>
+                    <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+                      <li><a href="Signup">Signup</a></li>
+                  
+                  </ul>
+                </div>
+              </nav>
+<br>
+<div class="container row s8 z-depth-3">
+    <form class="offset-s2 col s8 offset-s2" id="recipe-form" role="form">
+      <h2>Your List</h2>  
+      <div class = "row">
+             <div class="input-field col s12">
+                <input placeholder="Email Address:" id="email" type="email" class="validate">
+                <label for="email"></label>
+            </div>
+            <div class="input-field col s12">
+                <input placeholder="Recipe Name:" id="recipe_name" type="text" class="validate">
+                <label for="recipe"></label>
+            </div> 
+ 
+      </div>
+      <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_one" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_two" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+      </div>
+      <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_three" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_four" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+      </div>
+      <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_five" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_six" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+            <input placeholder="Ingredient" id="ingredient_seven" type="text" class="validate">
+            <label for="ingredient"></label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_eight" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_nine" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+            <div class="input-field col s6">
+                <input placeholder="Ingredient" id="ingredient_ten" type="text" class="validate">
+                <label for="ingredient"></label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <textarea placeholder="Your Instructions..." id="textarea" class="materialize-textarea" data-length="300"></textarea>
+                <label for="textarea2"></label>
+            </div>
+                    
+        <button class="btn waves-effect waves-light" id="submitBtn" type="submit" name="action">SUBMIT<i class="large material-icons">restaurant</i></button>
+        </div>
+        
+      </div>
+    </form>
+</div>
+
+</body>
+<script type="text/javascript">
+    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
+    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
+    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
+    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
+  
+    $("#submitBtn").on("click", function(event) {
+      event.preventDefault();
+  
+      // Here we grab the form elements
+      var newRecipe = {
+        // customerName: $("#email").val().trim(),//NEED TO ADD EMAIL TO RECIPE.js
+        recipeName: $("#recipe_name").val().trim(),
+        ingredient_one: $("#ingredient_one").val().trim(),
+        ingredient_two: $("#ingredient_two").val().trim(),  /// If this works add rest ingredients -ten
+        description: $("#textarea").val().trim()
+      };
+  
+      console.log(newRecipe);
+  
+      // This line is the magic. It"s very similar to the standard ajax function we used.
+      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+      // depending on if a tables is available or not.
+  
+      $.post("/api/recipeform", newRecipe,
+        function(data) {
+  
+          // If a table is available... tell user they are booked.
+          if (data) {
+            alert("Yay! You are officially booked!");
+          }
+  
+          // If a table is available... tell user they on the waiting list.
+          else {
+            alert("Sorry you are on the wait list");
+          }
+  
+          // Clear the form when submitting
+          $("#recipe_name").val("");
+          $("#ingredient_one").val("");
+          $("#ingredient_two").val("");
+          $("#textarea").val("");
+  
+        }); 
+  
+    });
+  
+  </script>
+</html> 
