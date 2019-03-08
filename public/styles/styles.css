@@ -1,3 +1,10 @@
+body{
+
+  background-image: url("/public/images/food1.jpg");
+}
+.jumbotron {
+  background-image: url("/public/images/food1.jpg");
+}
 .list-group-item {
   line-height: 2.5;
 }
