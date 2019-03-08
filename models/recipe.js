@@ -1,7 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
 
-    userID: DataTypes.INT,
+
+    userID: DataTypes.INTEGER,
     recipeName: {
       type: DataTypes.STRING,
       allowNull: false,
