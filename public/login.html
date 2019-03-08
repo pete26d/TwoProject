@@ -7,39 +7,137 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css">
   <link href="stylesheets/style.css" rel="stylesheet">
+   <!-- Compiled and minified CSS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+           
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
+  <!--Import materialize.css-->
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+<link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- Compiled and minified JavaScript -->
+  <!-- <link href="../public/styles/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+    <link href="../public/styles/materialize.min.css" type="text/css" rel="stylesheet" media="screen,projection" /> -->
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+ 
+
+
+<nav data-target="mobile-demo" class="sidenav-trigger">
+<div class="nav-wrapper">
+  <a href="#!" class="brand-logo">Logo</a>
+  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+  <ul class="right hide-on-med-and-down">
+    <li><a href="index">Home</a></li>
+    <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+      <li><a href="Signup">Signup</a></li>
+  
+  </ul>
+</div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a href="/">Home</a></li>
+<li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
+      <li><a href="Signup">Signup</a></li>
+   
+</ul>
+<script type= "text/JavaScript">
+$(document).ready(function(){
+$('.sidenav').sidenav(); 
+});
+</script>
+  
+<div id="home">
+<div class="container">
+<div class="row">
+  <div class="col-8 offset-2">
+    <h1>{{msg}}</h1>
+    
+    <h2>This is our Home Page!</h2>
+    <form class="clearfix mb-4" action="POST">
+      <div class="form-group">
+        <label for="example-text">Example Text</label>
+        <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
       </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Login Form</h2>
-        <form class="login">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-default">Login</button>
-        </form>
-        <br />
-        <p>Or sign up <a href="/">here</a></p>
+      <div class="form-group">
+        <label for="example-description">Example Description</label>
+        <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
       </div>
-    </div>
+      <button id="submit" class="btn btn-primary float-right">Submit</button>
+    </form>
+    <h3>Examples:</h3>
+    <ul id="example-list" class="list-group">
+      {{#each examples}}
+      <li data-id="{{this.id}}" class="list-group-item">
+        <a href="example/{{this.id}}">{{this.text}}</a>
+        <button class="btn btn-danger float-right delete">ｘ</button>
+      </li>
+      {{/each}}
+    </ul>
   </div>
+</div>
+</div>
+</div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/login.js"></script>
 
+<div id="id01" class="modal">
+
+<form class="modal-content animate" action="/">
+
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+  <img src="#" alt="Avatar" class="avatar">
+
+    <h2>Login Form</h2>
+    <form class="login">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email address</label>
+        <input type="email" class="form-control" id="email-input" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input type="password" class="form-control" id="password-input" placeholder="Password">
+      </div>
+      <button type="submit" class="btn btn-default">Login</button>
+    
+    </form>
+    <br />
+    <p>Or sign up <a href="/">here</a></p>
+  </div>
+</div>
+
+</form>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("id01");
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+    modal.style.display = "none";
+}
+}  
+
+</script>
+
+
+
+  <!-- container for recipe cards -->
+
+<script src="../public/js/materialize.js"></script>
+{{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js" ></script> --}}
+
+<script src="../models/index.js"></script>
+<script src="../public/js/index.js"></script>
 </body>
-
 </html>
