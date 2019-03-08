@@ -1,8 +1,8 @@
 {
   "development": {
     "username": "root",
-    "password": "SigmaLG#16",
-    "database": "exampledb",
+    "password": "p8n3l3SS",
+    "database": "recipe_db",
     "host": "localhost",
     "dialect": "mysql"
     
