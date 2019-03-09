@@ -1,12 +1,24 @@
-body{
+/* body{
 
-  background-image: url("/public/images/food1.jpg");
+  background-image: url("/images/food1.jpg");
 }
 .jumbotron {
-  background-image: url("/public/images/food1.jpg");
-}
+  background-image: url("/images/food1.jpg");
+} */
 .list-group-item {
   line-height: 2.5;
+}
+#navbarNav{
+  margin: auto;
+  
+}
+#first{
+  width: 200px;
+  position: relative;
+  left: 550px;
+  top: -200px;
+  background-color: black;
+  border: 1px solid gold;
 }
 form.signup,
 form.login {
