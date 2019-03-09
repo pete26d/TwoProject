@@ -96,8 +96,4 @@ app.get("/api/recipes/:id", function(req, res) {
       });
     }
   });
-  
-
-  
-  
 };
