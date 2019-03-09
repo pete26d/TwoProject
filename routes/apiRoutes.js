@@ -11,11 +11,46 @@ module.exports = function(app) {
   
   
   // Get all Recipes
-  app.get("/api/recipes", function(req, res) {
-    db.Recipe.findAll({}).then(function(dbRecipes) {
-      res.json(dbRecipes);
-    });
+  // app.get("/api/recipes", function(req, res) {
+  //   db.Recipe.findAll({}).then(function(dbRecipes) {
+  //     res.json(dbRecipes);
+  //   });
+  // });
+
+//NEW ROUTING AFTER MERGE
+
+app.get("/api/recipes", function(req, res) {
+  var query = {};
+  if (req.query.User_id) {
+    query.UserId = req.query.user_id;
+  }
+  // Here we add an "include" property to our options in our findAll query
+  // We set the value to an array of the models we want to include in a left outer join
+  // In this case, just db.Author
+  db.Recipe.findAll({
+    where: query,
+    include: [db.User]
+  }).then(function(dbRecipe) {
+    res.json(dbRecipe);
   });
+});
+
+// Get route for retrieving a single recipe
+app.get("/api/recipes/:id", function(req, res) {
+  // Here we add an "include" property to our options in our findOne query
+  // We set the value to an array of the models we want to include in a left outer join
+  // In this case, just db.Author
+  db.Recipe.findOne({
+    where: {
+      id: req.params.id
+    },
+    include: [db.User]
+  }).then(function(dbRecipe) {
+    res.json(dbRecipe);
+  });
+});
+
+
   
   // Delete an Recipe by id
   app.delete("/api/recipes/:id", function(req, res) {
@@ -61,8 +96,4 @@ module.exports = function(app) {
       });
     }
   });
-  
-
-  
-  
 };
