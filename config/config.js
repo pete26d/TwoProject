@@ -7,7 +7,7 @@ module.exports = {
       username: "root",
       // make sure to set this env variable in your .env file
       password: process.env.LOCAL_MYSQL_PASSWORD,
-      database: "exampledb",
+      database: "recipe_db",
       host: "localhost",
       dialect: "mysql"
     },
@@ -21,7 +21,10 @@ module.exports = {
     },
     production: {
       /* eslint-disable-next-line camelcase */
-      use_env_variable: JAWSDB_URL,
-      dialect: mysql
+      username: process.env.PROD_DB_USERNAME,
+      password: process.env.PROD_DB_PASSWORD,
+      database: process.env.PROD_DB_DATABASE,
+      host: process.env.PROD_DB_HOST,
+      dialect: "mysql"
     }
   };
