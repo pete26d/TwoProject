@@ -1,5 +1,7 @@
 var db = require("../models");
 var path = require("path");
+var isAuthenticated = require("../config/middleware/isAuthenticated");
+
 module.exports = function(app) {
   // Load index page
   // app.get("/", function(req, res) {
@@ -22,7 +24,7 @@ module.exports = function(app) {
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
   });
-  app.get("/members", function(req, res) {
+  app.get("/members", isAuthenticated, function(req, res) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 
@@ -52,6 +54,13 @@ module.exports = function(app) {
       res.redirect("/members");
     }
     res.sendFile(path.join(__dirname, "../public/signup.html"));
+  });
+  app.get("/recipes", function(req, res) {
+    // To view all recipes
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/recipes.html"));
   });
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page

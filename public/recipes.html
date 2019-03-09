@@ -1,0 +1,172 @@
+<head>
+    <meta charset="utf-8">
+    <title>Artist Buttons</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <!-- <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css"> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="images/logo-01.png" alt="..." height="45" width="100"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recipeform.html">Submit recipe</a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                        Login
+                    </button>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="members.html" tabindex="-1" aria-disabled="true">View Account</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html" tabindex="-1" aria-disabled="true">Sign up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="recipes.html" tabindex="-1" aria-disabled="true">Search Recipes</a>
+                </li>
+                <li class="nav-item">
+
+
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form class="login">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email address</label>
+                            <input type="email" class="form-control" id="email-input" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="password-input" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-default">Login</button>
+
+                    </form>
+                    <br />
+                    <p>Or sign up <a href="/">here</a></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="body">
+        <div id="black">
+            <form>
+                <span id="todo-item"> SEARCH RECIPES:
+                    <input id="artist-input" type="text">
+                    <input id="add-artist" value="Add Item" type="submit">
+                </span>
+            </form>
+        </div>
+        <div id="button-container">
+        </div>
+
+        <div id="gifs-appear-here" class="row">
+        </div>
+        <!-- Move search bar above buttons -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- <script type="text/javascript">
+        var artists = ["BEYONCE", "SOLANGE", "JAY Z", "DRAKE", "NICKI MINAJ", "LIL WAYNE", "ELLA MAI"];
+        $(document).on("click", ".furry", function () {
+          var artist = $(this).attr("data-type");
+          var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+            artist + "&api_key=aaHZzssXSGK36loVeYs8mncNaiGSy4VS&limit=10";
+           $.ajax({
+            url: queryURL,
+            method: "GET"
+          }).then(function (response) {
+            var results = response.data;
+            console.log(results);
+            for (var i = 0; i < results.length; i++) {
+              var artistDiv = $("<div>");
+               var p = $("<p>").text("Rating: " + results[i].rating);
+               var artistImage = $("<img>");
+              artistImage.addClass("art");
+              artistDiv.addClass("card");
+               artistImage.attr("src", results[i].images.fixed_height_still.url);
+              artistImage.attr("data-still", results[i].images.fixed_height_still.url);
+              artistImage.attr("data-animate", results[i].images.fixed_height.url);
+              artistImage.attr("data-state", "still");
+              artistDiv.prepend(artistImage);
+              artistDiv.prepend(p);
+               $("#gifs-appear-here").prepend(artistDiv);
+             }
+          });
+           $("#gifs-appear-here").on("click", ".art", function () {
+            var state = $(this).attr("data-state");
+            if (state === "still") {
+              $(this).attr("src", $(this).attr("data-animate"));
+              $(this).attr("data-state", "animate");
+            }
+            else {
+              $(this).attr("src", $(this).attr("data-still"));
+              $(this).attr("data-state", "still");
+            }
+           })
+         });
+         function renderButtons() {
+           $("#button-container").empty();
+           for (var i = 0; i < artists.length; i++) {
+             var a = $("<button>");
+            // Adding a class of movie to our button
+            a.addClass("furry");
+            // Adding a data-attribute
+            a.attr("data-type", artists[i]);
+            // Providing the initial button text
+            a.text(artists[i]);
+            // Adding the button to the buttons-view div
+            $("#button-container").append(a);
+          }
+        }
+        $("#add-artist").on("click", function (event) {
+          event.preventDefault();
+          // This line grabs the input from the textbox
+          var artist = $("#artist-input").val().trim();
+          artists.push(artist);
+          console.log(artists);
+          renderButtons();
+        });
+         renderButtons();
+  
+      </script> -->
+    </div>
+</body>
+</html>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+  crossorigin="anonymous"></script>
