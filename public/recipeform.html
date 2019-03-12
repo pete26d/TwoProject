@@ -164,55 +164,6 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
   crossorigin="anonymous"></script>
-<script type="text/javascript">
-    // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
-    // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
-    // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
-    // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
-  
-    $("#submitBtn").on("click", function(event) {
-      event.preventDefault();
-  
-      // Here we grab the form elements
-      var newRecipe = {
-        // customerName: $("#email").val().trim(),//NEED TO ADD EMAIL TO RECIPE.js
-        recipeName: $("#recipe_name").val().trim(),
-        ingredient_one: $("#ingredient_one").val().trim(),
-        ingredient_two: $("#ingredient_two").val().trim(),  /// If this works add rest ingredients -ten
-        description: $("#textarea").val().trim()
-      };
-  
-      console.log(newRecipe);
-  
-      // This line is the magic. It"s very similar to the standard ajax function we used.
-      // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-      // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-      // depending on if a tables is available or not.
-  
-      $.ajax({
-        url: "/api/recipeform",
-        data: newRecipe,
-        method: "POST"
-      }).done(function(){
-        // If a table is available... tell user they are booked.
-        if (data) {
-            alert("Yay! You are officially booked!");
-          }
-  
-          // If a table is available... tell user they on the waiting list.
-          else {
-            alert("Sorry you are on the wait list");
-          }
-  
-          // Clear the form when submitting
-          $("#recipe_name").val("");
-          $("#ingredient_one").val("");
-          $("#ingredient_two").val("");
-          $("#textarea").val("");
-      })
-       
-    });
-  
-  </script>
+<script src="js/recipeform.js" type="text/javascript"></script>
     
 </html> 
