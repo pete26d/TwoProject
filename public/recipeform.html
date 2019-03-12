@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <title>Your Food List</title>
   <meta charset="UTF-8">
@@ -126,7 +125,6 @@
     </div>
   </form>
 </div>
-
 </body>
 <!--MODAL BELOW-->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -181,8 +179,7 @@
         recipeName: $("#recipe_name").val().trim(),
         ingredient_one: $("#ingredient_one").val().trim(),
         ingredient_two: $("#ingredient_two").val().trim(),  /// If this works add rest ingredients -ten
-        description: $("#textarea").val().trim(),
-        UserId: req.user.id
+        description: $("#textarea").val().trim()
       };
   
       console.log(newRecipe);
