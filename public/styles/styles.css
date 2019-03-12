@@ -1,10 +1,14 @@
-/* body{
-
-  background-image: url("/images/food1.jpg");
+.recipebody{
+background-image: -webkit-linear-gradient(black,white)
 }
-.jumbotron {
-  background-image: url("/images/food1.jpg");
-} */
+#recipecontainer {
+background-color: #fefefe;
+box-shadow: 10px 5px 5px rgba(4, 4, 4, 0.407);
+margin-top: 5em;
+margin-bottom: 5em;
+}
+ */
+
 .list-group-item {
   line-height: 2.5;
 }
@@ -31,6 +35,8 @@
   background-color: white;
   border: 1px solid gold;
 }
+
+
 
 
 form.signup,

@@ -1,7 +1,6 @@
 <head>
     <meta charset="utf-8">
-    <title>Artist Buttons</title>
-
+    <title>Recipes</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
     <meta charset="UTF-8">
@@ -14,57 +13,92 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#"><img src="images/logo-01.png" alt="..." height="45" width="100"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="recipeform.html">Submit recipe</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="members.html" tabindex="-1" aria-disabled="true">View Account</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="signup.html" tabindex="-1" aria-disabled="true">Sign up</a>
-                </li>
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="recipeform.html">Submit recipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="members.html" tabindex="-1" aria-disabled="true">View Account</a>
+            </li>
                 <li class="nav-item">
                     <a class="nav-link" href="recipes.html" tabindex="-1" aria-disabled="true">Search Recipes</a>
-                </li>
-                <li class="nav-item">
-
-
-                </li>
-            </ul>
+                  </li>
+                  <li class="nav-item">
+              
+      
+            </li>
+          </ul>
         </div>
-    </nav>
+      </nav>
+    <!-- Recipe Display Modal -->
+    <div class="modal fade" id="recipeModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Recipe</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h2 id="mRecipeName"></h2>
+                    <h4>Submitted by:</h4>                    
+                    <p id="mRecipeAuthor"></p>
+                    <h4>Ingredients:</h4>                    
+                    <p id="mRecipeIngredients"></p>
+                    <h4>Directions:</h4>                    
+                    <p id="mRecipeDirections"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-dark" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="body">
-        <div id="black">
-            <form>
-                <span id="todo-item"> SEARCH RECIPES:
-                    <input id="artist-input" type="text">
-                    <input id="add-artist" value="Add Item" type="submit">
-                </span>
-            </form>
-        </div>
-        <div id="button-container">
-        </div>
-
-        <div id="gifs-appear-here" class="row">
-        </div>
-        <!-- Move search bar above buttons -->
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-       
+        <div class="container">
+            <div class="row mt-4">
+              <div class="col-md-4">
+                <div class="form-group">
+                  <select class="custom-select" id="category">
+                    <option selected value="">All Categories</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Nut-Free">Nut-Free</option>
+                    <option value=""></option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <a class="btn btn-light" href="/public/recipeform.html">Enter New Recipe</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 recipe-container">
+              </div>
+            </div>
+          </div>
     </div>
 </body>
 </html>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
   crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
   crossorigin="anonymous"></script>
+<script src="js/recipes.js" type="text/javascript"></script>
+

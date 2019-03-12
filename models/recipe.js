@@ -1,8 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
-
-
-    user: DataTypes.INTEGER,
     recipeName: {
       type: DataTypes.STRING,
       allowNull: false,
