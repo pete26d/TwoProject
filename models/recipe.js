@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Recipe can't be created without a User due to the foreign key constraint
     Recipe.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };

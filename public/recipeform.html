@@ -118,7 +118,8 @@
         recipeName: $("#recipe_name").val().trim(),
         ingredient_one: $("#ingredient_one").val().trim(),
         ingredient_two: $("#ingredient_two").val().trim(),  /// If this works add rest ingredients -ten
-        description: $("#textarea").val().trim()
+        description: $("#textarea").val().trim(),
+        UserId: req.user.id
       };
   
       console.log(newRecipe);
