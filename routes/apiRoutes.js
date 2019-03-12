@@ -47,6 +47,8 @@ app.get("/api/recipes/:id", function(req, res) {
     },
     include: [db.User]
   }).then(function(dbRecipe) {
+    console.log("this route works");
+    console.log(dbRecipe);
     res.json(dbRecipe);
   });
 });
