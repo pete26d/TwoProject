@@ -1,13 +1,6 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
-
-
-    user: DataTypes.INTEGER,
+    
     recipeName: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -15,8 +8,10 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 255]
       }
     },
-
-    ingredient_one: DataTypes.STRING,
+    ingredient_one: {
+      type: DataTypes.STRING,
+      defaultValue: "Beef"
+    },
     ingredient_two: DataTypes.STRING,
     ingredient_three: DataTypes.STRING,
     ingredient_four: DataTypes.STRING,
@@ -34,8 +29,6 @@ module.exports = function(sequelize, DataTypes) {
         len: [1, 2000]
       }
     },
-
-    needToBuy: DataTypes.BOOLEAN
   });
 
   Recipe.associate = function(models) {
@@ -43,7 +36,7 @@ module.exports = function(sequelize, DataTypes) {
     // A Recipe can't be created without a User due to the foreign key constraint
     Recipe.belongsTo(models.User, {
       foreignKey: {
-        allowNull: true
+        allowNull: false
       }
     });
   };
