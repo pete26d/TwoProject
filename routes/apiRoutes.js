@@ -67,6 +67,7 @@ app.get("/api/recipes/:id", function(req, res) {
   app.post("/api/login", passport.authenticate("local"), function(req, res) {
     res.json("/members");
   });
+  
   app.post("/api/signup", function(req, res) {
     db.User.create({
       email: req.body.email,
