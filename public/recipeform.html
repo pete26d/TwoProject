@@ -25,7 +25,15 @@
             <a class="nav-link" href="recipeform.html">Submit recipe</a>
           </li>
           <li class="nav-item">
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+              Login
+            </button>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="members.html" tabindex="-1" aria-disabled="true">View Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sign up</a>
           </li>
           <li class="nav-item">
     
@@ -156,7 +164,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
   crossorigin="anonymous"></script>
-  <script type="text/javascript">
+<script type="text/javascript">
     // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
     // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
     // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
@@ -171,14 +179,16 @@
         recipeName: $("#recipe_name").val().trim(),
         ingredient_one: $("#ingredient_one").val().trim(),
         ingredient_two: $("#ingredient_two").val().trim(),  /// If this works add rest ingredients -ten
-        description: $("#textarea").val().trim(),
-        UserId: 1
+        description: $("#textarea").val().trim()
       };
+  
       console.log(newRecipe);
+  
       // This line is the magic. It"s very similar to the standard ajax function we used.
       // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
+  
       $.ajax({
         url: "/api/recipeform",
         data: newRecipe,
@@ -188,26 +198,21 @@
         if (data) {
             alert("Yay! You are officially booked!");
           }
+  
           // If a table is available... tell user they on the waiting list.
           else {
             alert("Sorry you are on the wait list");
           }
+  
           // Clear the form when submitting
           $("#recipe_name").val("");
           $("#ingredient_one").val("");
           $("#ingredient_two").val("");
           $("#textarea").val("");
-      })   
+      })
+       
     });
   
   </script>
     
 </html> 
-<script src ="public/js/main.js"></script>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-  crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-  crossorigin="anonymous"></script>
