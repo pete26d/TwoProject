@@ -5,104 +5,167 @@
   <title>Your Food List</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="./styles/styles.css" rel="stylesheet">
   <script src="https://code.jquery.com/jquery.js"></script>
 </head>
-<body>
-        <nav data-target="mobile-demo" class="sidenav-trigger">
-                <div class="nav-wrapper">
-                  <a href="#!" class="brand-logo">Logo</a>
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Submit recipe</a></li>
-                    <li><a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a></li>
-                      <li><a href="Signup">Signup</a></li>
-                  
-                  </ul>
-                </div>
-              </nav>
-<br>
-<div class="container row s8 z-depth-3">
-    <form class="offset-s2 col s8 offset-s2" id="recipe-form" role="form">
-      <h2>Your List</h2>  
-      <div class = "row">
-             <div class="input-field col s12">
-                <input placeholder="Email Address:" id="email" type="email" class="validate">
-                <label for="email"></label>
-            </div>
-            <div class="input-field col s12">
-                <input placeholder="Recipe Name:" id="recipe_name" type="text" class="validate">
-                <label for="recipe"></label>
-            </div> 
- 
+<body class="recipebody">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Logo</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="recipeform.html">Submit recipe</a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+              Login
+            </button>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="members.html" tabindex="-1" aria-disabled="true">View Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">Sign up</a>
+          </li>
+          <li class="nav-item">
+    
+          </li>
+        </ul>
+      </div>
+    </nav>
+<div class="container col-md-6 col-md-offset-3" id="recipecontainer">
+  <form class="form-group " id="recipe-form" role="form">
+    <h2>Exprecipe</h2>  
+    <div class="row">
+      <div class="col-lg-12">
+        <input placeholder="Email Address:" id="email" type="email" class="validate col-12">
+        <label for="email"></label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <input placeholder="Recipe Name:" id="recipe_name" type="text" class="validate">
+        <label for="recipe"></label>
+      </div> 
+    </div>
+    
+    <div class="row">
+          <div class="col">
+              <select class="form-control" placeholder="Ingredient" id="ingredient_one">
+                  <option>Beef</option>
+                  <option>Chicken</option>
+                  <option>Pork</option>
+                  <option>Turkey</option>
+                  <option>Tofu</option>
+                  <option>Vegan</option>
+                  <option>Beans</option>
+                  <option>Lamb</option>
+                </select>
+          </div>
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_two" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
+    </div>
+    <div class="row">
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_three" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_four" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
+    </div>
+    <div class="row">
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_five" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_six" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
       </div>
       <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_one" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_two" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
+          <div class="col">
+          <input placeholder="Ingredient" id="ingredient_seven" type="text" class="validate">
+          <label for="ingredient"></label>
+          </div>
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_eight" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
       </div>
       <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_three" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_four" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_nine" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
+          <div class="col">
+              <input placeholder="Ingredient" id="ingredient_ten" type="text" class="validate">
+              <label for="ingredient"></label>
+          </div>
       </div>
       <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_five" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_six" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-            <input placeholder="Ingredient" id="ingredient_seven" type="text" class="validate">
-            <label for="ingredient"></label>
-            </div>
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_eight" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_nine" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-            <div class="input-field col s6">
-                <input placeholder="Ingredient" id="ingredient_ten" type="text" class="validate">
-                <label for="ingredient"></label>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <textarea placeholder="Your Instructions..." id="textarea" class="materialize-textarea" data-length="300"></textarea>
-                <label for="textarea2"></label>
-            </div>
-                    
-        <button class="btn waves-effect waves-light" id="submitBtn" type="submit" name="action">SUBMIT<i class="large material-icons">restaurant</i></button>
-        </div>
-        
+          <div class="col">
+              <textarea placeholder="Your Instructions..." id="textarea" class="form-control" cols="30"rows ="10" data-length="300"></textarea>
+              <label for="textarea2"></label>
+          </div>
       </div>
-    </form>
+      <button class="col-4 btn-danger" id="submitBtn" type="submit" name="action">SUBMIT<i class="large material-icons">restaurant</i></button>
+    </div>
+  </form>
 </div>
 
 </body>
+<!--MODAL BELOW-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Log in</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="login">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input type="email" class="form-control" id="email-input" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Password</label>
+              <input type="password" class="form-control" id="password-input" placeholder="Password">
+            </div>
+            <button type="submit" class="btn btn-default">Login</button>
+  
+          </form>
+          <br />
+          <p>Or sign up <a href="/">here</a></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+  crossorigin="anonymous"></script>
 <script type="text/javascript">
     // In this code below we create the Front-end JavaScript which "POSTS" our form data to our express server.
     // In essence, when the user hits submit, jQuery grabs all of the fields then sends a post request to our api
@@ -128,11 +191,13 @@
       // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
       // depending on if a tables is available or not.
   
-      $.post("/api/recipeform", newRecipe,
-        function(data) {
-  
-          // If a table is available... tell user they are booked.
-          if (data) {
+      $.ajax({
+        url: "/api/recipeform",
+        data: newRecipe,
+        method: "POST"
+      }).done(function(){
+        // If a table is available... tell user they are booked.
+        if (data) {
             alert("Yay! You are officially booked!");
           }
   
@@ -146,10 +211,10 @@
           $("#ingredient_one").val("");
           $("#ingredient_two").val("");
           $("#textarea").val("");
-  
-        }); 
-  
+      })
+       
     });
   
   </script>
+    
 </html> 

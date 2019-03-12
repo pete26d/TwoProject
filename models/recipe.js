@@ -1,5 +1,10 @@
 module.exports = function(sequelize, DataTypes) {
   var Recipe = sequelize.define("Recipe", {
+    id: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true
+    },
 
 
     user: DataTypes.INTEGER,

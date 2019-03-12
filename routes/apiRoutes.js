@@ -4,6 +4,7 @@ module.exports = function(app) {
   
   // Create a new Recipe
   app.post("/api/recipeform", function(req, res) {
+    console.log(req.body)
     db.Recipe.create(req.body).then(function(dbRecipe) {
       res.json(dbRecipe);
     });
@@ -65,7 +66,6 @@ app.get("/api/recipes/:id", function(req, res) {
     res.json("/members");
   });
   app.post("/api/signup", function(req, res) {
-    console.log(req.body);
     db.User.create({
       email: req.body.email,
       password: req.body.password
