@@ -3,7 +3,7 @@ Exprecipes is a web application that allows users to create thier own "shopping 
 ---
 Deployed on Heroku -->(https://cryptic-coast-48815.herokuapp.com/)
 ---
-![Exprecipes Home Design](https://drive.google.com/file/d/1rdrQZe12wlFcTlZH67F5X5RQuL6X4sH-/view?usp=sharing)
+[Exprecipes Home Design](https://drive.google.com/file/d/1rdrQZe12wlFcTlZH67F5X5RQuL6X4sH-/view?usp=sharing)
 
 ## Built With
 * JQuery (https://code.jquery.com/)
