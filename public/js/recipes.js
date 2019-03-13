@@ -71,7 +71,7 @@ $(document).on("click", "button.display", function() {
     event.preventDefault();
     $.get("/api/recipes/" + mRecipeId, function(data) {
         $("#mRecipeName").text(data.recipeName);
-        $("#mRecipeAuthor").text(data.UserId);
+        $("#mRecipeAuthor").text(data.User.email);
         $("#mRecipeIngredients").text(
           data.ingredient_one + ", " +
           data.ingredient_two + ", " +
