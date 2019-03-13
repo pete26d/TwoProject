@@ -28,7 +28,7 @@ module.exports = function(sequelize, DataTypes) {
       validate: {
         len: [1, 2000]
       }
-    },
+    }
   });
 
   Recipe.associate = function(models) {
