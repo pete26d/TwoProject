@@ -16,6 +16,17 @@ margin-bottom: 5em;
   margin: auto;
   
 }
+#log{
+  position: relative;
+  right: 500px;
+  font-size: 10px;
+}
+#sign{
+  margin: auto;
+  width: 40%;
+  border: 1px solid black;
+  
+}
 #first{
   width: 200px;
   position: relative;
