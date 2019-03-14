@@ -1,14 +1,25 @@
-.recipebody{
-background-image: -webkit-linear-gradient(black,white)
+#overlay{
+  background-image: url("https://img.freepik.com/free-photo/food-background-food-concept-with-various-tasty-fresh-ingredients-cooking-italian-food-ingredients-view-from-with-copy-space_1220-1491.jpg?size=626&ext=jpg");
+  background-size: cover;
 }
 #recipecontainer {
 background-color: #fefefe;
-box-shadow: 10px 5px 5px rgba(4, 4, 4, 0.407);
-margin-top: 5em;
-margin-bottom: 5em;
+box-shadow: 10px 15px 5px rgba(4, 4, 4, 0.407);
+margin-top: 2em;
+margin-bottom: 2em;
 }
- */
-
+#submitBtn {
+  background-color: rgb(127,192,127);
+  box-shadow: 10px 5px 5px  rgba(4, 4, 4, 0.407);
+  padding: 14px 24px;
+  border: 0 none;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+.footer {
+background-color: #fefefe;
+}
+/*=========*/
 .list-group-item {
   line-height: 2.5;
 }
@@ -22,9 +33,10 @@ margin-bottom: 5em;
   font-size: 10px;
 }
 #sign{
+  align-content: center;
   margin: auto;
   width: 40%;
-  border: 1px solid black;
+  border: px solid black;
   
 }
 #first{
