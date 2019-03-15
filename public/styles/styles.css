@@ -16,6 +16,9 @@ margin-bottom: 2em;
   font-weight: 700;
   letter-spacing: 1px;
 }
+#logo {
+ 
+}
 .footer {
 background-color: #fefefe;
 }
@@ -24,20 +27,40 @@ background-color: #fefefe;
   line-height: 2.5;
 }
 #navbarNav{
-  margin: auto;
-  
+  margin: auto;  
 }
 #log{
   position: relative;
   right: 500px;
   font-size: 10px;
 }
+
+#overlay-login { 
+  background-image: url("https://i.pinimg.com/originals/5c/4d/6c/5c4d6c189ec5955a4335a0c422d4a22d.jpg");
+  background-size: cover;
+  background-repeat: repeat; /* can set to no-repeat*/
+}
+#overlay-signup {
+  background-image: url("https://www.veganchophouse.com/wp-content/uploads/2017/12/background_darkened-2400x1600-e1524170163768.jpg");
+  background-size: cover;
+  background-repeat: repeat;  
+}
+#sign {
+  align-content: center;
+  background-color: white;
+  box-shadow: 10px 15px 5px rgba(4, 4, 4, 0.407);
+  border: 5px solid rgb(189, 187, 187);
+  margin-top: 25px;
+ 
+  width:50%
+=======
 #sign{
   align-content: center;
   margin: auto;
   width: 40%;
   border: px solid black;
   
+
 }
 #first{
   width: 200px;
