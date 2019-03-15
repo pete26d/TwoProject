@@ -22,7 +22,6 @@ margin-bottom: 2em;
 .footer {
 background-color: #fefefe;
 }
-/*=========*/
 .list-group-item {
   line-height: 2.5;
 }
@@ -53,7 +52,7 @@ background-color: #fefefe;
   margin-top: 25px;
  
   width:50%
-=======
+}
 #sign{
   align-content: center;
   margin: auto;
@@ -67,9 +66,8 @@ background-color: #fefefe;
   position: relative;
   left: 450px;
   top: -200px;
-  background-color: black;
-  color: white;
-  border: 1px solid gold;
+  background-color: rgb(127,192,127);
+  box-shadow: 10px 5px 5px  rgba(4, 4, 4, 0.407);
 }
 
 
