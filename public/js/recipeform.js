@@ -37,13 +37,10 @@ $("#submitBtn").on("click", function(event) {
     }).done(function(){
       // If a table is available... tell user they are booked.
       if (data) {
-          alert("Yay! You are officially booked!");
+          alert("Thanks for the recipe");
         }
 
-        // If a table is available... tell user they on the waiting list.
-        else {
-          alert("Sorry you are on the wait list");
-        }
+        
 
         // Clear the form when submitting
         $("#recipe_name").val("");
