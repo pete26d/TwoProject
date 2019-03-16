@@ -5,49 +5,54 @@
   <title>Passport Authentication</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="stylesheets/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+  <!-- <link href="stylesheets/style.css" rel="stylesheet"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
     crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="index.html"><img src="images/logo-01.png" alt="..." height="45" width="100"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
-    aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="recipeform.html">Submit recipe</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">View Account</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="recipes.html" tabindex="-1" aria-disabled="true">Search Recipes</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-link" id ="log" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
+    <a class="navbar-brand" href="index.html"><img src="images/logo-01.png" alt="..." height="45" width="100"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
         </li>
-    </ul>
-  </div>
-</nav>
+        <li class="nav-item">
+          <a class="nav-link" href="recipeform.html">Submit Recipe</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="#" tabindex="-1" aria-disabled="true">View Account</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="recipes.html" tabindex="-1" aria-disabled="true">Search Recipes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/logout" tabindex="-1" aria-disabled="true">Logout</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
 
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Welcome <span class="member-name"></span></h2>
-      </div>
-    </div>
-  </div>
+  <div class="jumbotron">
+          <!-- <div class="col-md-6 col-md-offset-3"> -->
+            <h2 class = "welcome">Welcome  <span class="member-name"></span></h2>
+      <p class="lead"> Exprecipes is a website that gives you smart and easy recipes that include 10 ingrediants or less. 
+          YES only 10 ingrediants or less to make a nice filling meal..</p>
+     
 
+    </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
@@ -56,3 +61,4 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="js/members.js"></script>
+
